@@ -6,14 +6,23 @@ namespace FashionTrend.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.ConfigurePersistenceApp(builder.Configuration);
+            
+            builder.Services.ConfigureApplicationApp();
 
-            builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // Add services to the container.
+
+            builder.Services.AddControllers();
+
+            builder.Services.ConfigureCorsPolicy();
+
             var app = builder.Build();
+
+            BD.CreateDataBase(app);
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
