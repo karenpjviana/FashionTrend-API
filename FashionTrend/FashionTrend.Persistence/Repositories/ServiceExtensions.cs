@@ -16,5 +16,6 @@ public static class ServiceExtensions
         services.AddScoped<IServiceOrderRepository, ServiceOrderRepository>();
         services.AddScoped<IContractRepository, ContractRepository>();
         services.AddScoped<IPaymentRepository, PaymentRepository>();
+        services.AddScoped<IKafkaProducer, KafkaProducer>();
     }
 }
