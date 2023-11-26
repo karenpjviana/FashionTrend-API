@@ -14,7 +14,7 @@ public class CreateMessageHandler : IRequestHandler<CreateMessageRequest, Create
 
     public async Task<CreateMessageResponse> Handle(CreateMessageRequest request, CancellationToken cancellationToken)
     {
-        var message = _kafkaProducer.ProduceAsync(
+        var message = await _kafkaProducer.ProduceAsync(
             request.topic,
             request.sender,
             request.receiver,
