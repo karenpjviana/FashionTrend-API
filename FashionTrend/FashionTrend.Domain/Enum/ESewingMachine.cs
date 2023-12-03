@@ -1,10 +1,10 @@
 ﻿public enum ESewingMachine
 {
-    Overloque,
-    Galoneira,
-    PontoCadeia,
-    Travete,
-    Reta,
-    Caseadeira,
-    Botoneira
+    overloque = 1,
+    galoneira,
+    pontocadeia,
+    travete,
+    reta,
+    caseadeira,
+    botoneira
 }

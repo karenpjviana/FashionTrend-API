@@ -20,8 +20,8 @@ public class GetAllServiceHandler : IRequestHandler<GetAllServiceRequest, List<G
     {
         try
         {
-            var services = await _serviceRepository.GetAll(cancellationToken);
-            return _mapper.Map<List<GetAllServiceResponse>>(services);
+            var Services = await _serviceRepository.GetAll(cancellationToken);
+            return _mapper.Map<List<GetAllServiceResponse>>(Services);
         }
         catch (Exception ex)
         {

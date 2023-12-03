@@ -1,12 +1,12 @@
 ﻿public enum EMaterial
 {
-    Jeans,
-    Silk,
-    Leather,
-    Lycra,
-    Cotton,
-    Velvet,
-    Polyester,
-    Linen
+    jeans = 1,
+    seda,
+    couro,
+    lycra,
+    algodao,
+    veludo,
+    poliester,
+    linho
 }
 

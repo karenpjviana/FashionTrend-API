@@ -11,7 +11,7 @@ public class ServiceRepository :  BaseRepository<Service>, IServiceRepository
         return await Context.Services.Where(x => x.Description.Equals(description)).ToListAsync(cancellationToken);
     }
 
-    public async Task<List<Service>> GetByType(string type, CancellationToken cancellationToken)
+    public async Task<List<Service>> GetByType(ERequestType type, CancellationToken cancellationToken)
     {
         return await Context.Services.Where(x => x.Type.Equals(type)).ToListAsync(cancellationToken);
     }

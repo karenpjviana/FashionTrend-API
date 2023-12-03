@@ -98,29 +98,6 @@ public class ServiceControllers : ControllerBase
     }
 
     /// <summary>
-    /// Retorna o Serviço cadastrado por material.
-    /// </summary>
-    /// <param name="material">Material do Serviço</param>
-    /// <param name="cancellationToken"></param>
-    /// <response code="200">Retorna os dados do Serviço quando encontrado.</response>
-    /// <response code="404">Serviço não encontrado.</response>
-    [HttpGet("/material/{material}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<GetByMaterialServiceResponse>> GetByMaterial(string material, CancellationToken cancellationToken)
-    {
-        if (material is null)
-        {
-            return BadRequest();
-        }
-
-        var GetRequest = new GetByMaterialServiceRequest(material.ToLower());
-        var response = await _mediator.Send(GetRequest, cancellationToken);
-        return Ok(response);
-    }
-
-    /// <summary>
     /// Cria um novo Serviço com base nos dados fornecidos.
     /// </summary>
     /// <param name="request">Dados do Serviço a serem criados.</param>
