@@ -1,4 +1,4 @@
-﻿public sealed record CreateSupplierResponse
+﻿public sealed record GetByEmailSupplierResponse
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
