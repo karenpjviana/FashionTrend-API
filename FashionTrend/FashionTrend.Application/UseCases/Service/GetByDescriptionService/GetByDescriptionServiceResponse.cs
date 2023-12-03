@@ -1,7 +1,6 @@
-﻿public class Service : BaseEntity
+﻿public sealed record GetByDescriptionServiceResponse
 {
-    // Descrição do Serviço -> Solicitação(Atividade)
-
+    public Guid Id { get; set; }
     public string Description { get; set; }
     public bool Delivery { get; set; }
     public ERequestType Type { get; set; }

@@ -1,5 +1,5 @@
 ﻿public enum ERequestType
 {
-    Repair,
+    Repair = 1,
     Manufactoring
 }
