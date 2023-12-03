@@ -4,11 +4,11 @@ using System.Net.Mime;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ServiceControllers : ControllerBase
+public class Service : ControllerBase
 {
     IMediator _mediator;
 
-    public ServiceControllers(IMediator mediator)
+    public Service(IMediator mediator)
     {
         _mediator = mediator;
     }
@@ -100,7 +100,7 @@ public class ServiceControllers : ControllerBase
     /// <summary>
     /// Cria um novo Serviço com base nos dados fornecidos.
     /// </summary>
-    /// <param name="request">Dados do Serviço a serem criados.</param>
+    /// <param name="request">Dados do Serviço a ser criado.</param>
     /// <response code="201">Serviço criado com sucesso.</response>
     /// <response code="400">Requisição inválida ou erro ao criar o Serviço.</response>
     [HttpPost]
@@ -117,7 +117,7 @@ public class ServiceControllers : ControllerBase
     /// Altera o Serviço cadastrado pelo Id.
     /// </summary>
     /// <param name="id">Id do Serviço</param>
-    /// <param name="request">Dados do Serviço a serem alterados.</param>
+    /// <param name="request">Dados do Serviço a ser alterado.</param>
     /// <param name="cancellationToken"></param>
     /// <response code="404">Serviço não encontrado.</response>
     /// <response code="200">Retorna que um Serviço foi alterado.</response>

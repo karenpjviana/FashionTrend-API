@@ -5,11 +5,11 @@ using System.Net.Mime;
 [Route("api/[controller]")]
 [ApiController]
 [Consumes(MediaTypeNames.Application.Json)]
-public class SupplierControllers : ControllerBase
+public class Supplier : ControllerBase
 {
     IMediator _mediator;
 
-    public SupplierControllers(IMediator mediator)
+    public Supplier(IMediator mediator)
     {
         _mediator = mediator;
     }
@@ -58,7 +58,7 @@ public class SupplierControllers : ControllerBase
     /// <param name="cancellationToken"></param>
     /// <response code="200">Retorna os dados do fornecedor quando encontrado.</response>
     /// <response code="404">Fornecedor não encontrado.</response>
-    [HttpGet("/email/{email}")]
+    [HttpGet("email/{email}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces(MediaTypeNames.Application.Json)]
@@ -81,7 +81,7 @@ public class SupplierControllers : ControllerBase
     /// <param name="cancellationToken"></param>
     /// <response code="200">Retorna os dados do fornecedor quando encontrado.</response>
     /// <response code="404">Fornecedor não encontrado.</response>
-    [HttpGet("/machine/{machine}")]
+    [HttpGet("machine/{machine}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces(MediaTypeNames.Application.Json)]
@@ -104,7 +104,7 @@ public class SupplierControllers : ControllerBase
     /// <param name="cancellationToken"></param>
     /// <response code="200">Retorna os dados do fornecedor quando encontrado.</response>
     /// <response code="404">Fornecedor não encontrado.</response>
-    [HttpGet("/material/{material}")]
+    [HttpGet("material/{material}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces(MediaTypeNames.Application.Json)]

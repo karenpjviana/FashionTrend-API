@@ -28,10 +28,9 @@ public class CreateDraftContractHandler : IRequestHandler<CreateDraftContractReq
         await _unitOfWork.Commit(cancellationToken);
 
 
-        var notification = new CreateNotificationHandler("" +
-          "AC707d8afa36844454da6d1fd1a2e2b8e7", "2d820c66817ee777f50e0e9d29540c49", "+14133531057");
+        var notification = new CreateNotificationHandler("AC707d8afa36844454da6d1fd1a2e2b8e7", "2d820c66817ee777f50e0e9d29540c49", "+14133531057");
 
-        notification.SendSMS("+55", "Minuta de contrato de serviço criada com sucesso!");
+        notification.SendSMS("+5579999440110", "Minuta de contrato de serviço criada com sucesso!");
 
         return _mapper.Map<CreateDraftContractResponse>(draft);
     }

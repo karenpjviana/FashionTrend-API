@@ -1,5 +1,6 @@
 ﻿using MediatR;
 
 public sealed record CreateDraftContractRequest (
-    Supplier Supplier, Service Service, string Description
+    ServiceOrder ServiceOrder, 
+    string Description
     ) : IRequest<CreateDraftContractResponse>;

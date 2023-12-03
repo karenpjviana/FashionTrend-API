@@ -4,14 +4,14 @@
         <name>FashionTrend.API</name>
     </assembly>
     <members>
-        <member name="M:ServiceControllers.GetAll(System.Threading.CancellationToken)">
+        <member name="M:Service.GetAll(System.Threading.CancellationToken)">
             <summary>
             Retorna todos os Services(Serviços) cadastrados.
             </summary>
             <param name="cancellationToken"></param>
             <response code="200">Coleção de Service(Serviço). Pode ser uma coleção vazia se não houver Services cadastrados.</response>
         </member>
-        <member name="M:ServiceControllers.Get(System.Nullable{System.Guid},System.Threading.CancellationToken)">
+        <member name="M:Service.Get(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
             Retorna o Serviço cadastrado por ID.
             </summary>
@@ -20,7 +20,7 @@
             <response code="200">Retorna os dados do Serviço quando encontrado.</response>
             <response code="404">Serviço não encontrado.</response>
         </member>
-        <member name="M:ServiceControllers.GetByDescription(System.String,System.Threading.CancellationToken)">
+        <member name="M:Service.GetByDescription(System.String,System.Threading.CancellationToken)">
             <summary>
             Retorna o Serviço cadastrado por descrição.
             </summary>
@@ -29,7 +29,7 @@
             <response code="200">Retorna os dados do Serviço quando encontrado.</response>
             <response code="404">Serviço não encontrado.</response>
         </member>
-        <member name="M:ServiceControllers.GetByType(ERequestType,System.Threading.CancellationToken)">
+        <member name="M:Service.GetByType(ERequestType,System.Threading.CancellationToken)">
             <summary>
             Retorna o Serviço cadastrado por tipo.
             </summary>
@@ -38,7 +38,7 @@
             <response code="200">Retorna os dados do Serviço quando encontrado.</response>
             <response code="404">Serviço não encontrado.</response>
         </member>
-        <member name="M:ServiceControllers.Create(CreateServiceRequest)">
+        <member name="M:Service.Create(CreateServiceRequest)">
             <summary>
             Cria um novo Serviço com base nos dados fornecidos.
             </summary>
@@ -46,7 +46,7 @@
             <response code="201">Serviço criado com sucesso.</response>
             <response code="400">Requisição inválida ou erro ao criar o Serviço.</response>
         </member>
-        <member name="M:ServiceControllers.Update(System.Nullable{System.Guid},UpdateServiceRequest,System.Threading.CancellationToken)">
+        <member name="M:Service.Update(System.Nullable{System.Guid},UpdateServiceRequest,System.Threading.CancellationToken)">
             <summary>
             Altera o Serviço cadastrado pelo Id.
             </summary>
@@ -56,7 +56,7 @@
             <response code="404">Serviço não encontrado.</response>
             <response code="200">Retorna que um Serviço foi alterado.</response>
         </member>
-        <member name="M:ServiceControllers.Delete(System.Nullable{System.Guid},System.Threading.CancellationToken)">
+        <member name="M:Service.Delete(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
             Deleta o Serviço cadastrado pelo Id.
             </summary>
@@ -64,14 +64,14 @@
             <param name="cancellationToken"></param>
             <response code="200">Retorna que um Serviço foi deletado.</response>
         </member>
-        <member name="M:ServiceOrderControllers.GetAll(System.Threading.CancellationToken)">
+        <member name="M:ServiceOrder.GetAll(System.Threading.CancellationToken)">
             <summary>
             Retorna todos os ServiceOrders(Ordens de Serviço) cadastrados.
             </summary>
             <param name="cancellationToken"></param>
             <response code="200">Coleção de ServiceOrder(Ordem de Serviço). Pode ser uma coleção vazia se não houver ServiceOrders cadastrados.</response>
         </member>
-        <member name="M:ServiceOrderControllers.Get(System.Nullable{System.Guid},System.Threading.CancellationToken)">
+        <member name="M:ServiceOrder.Get(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
             Retorna o Ordem de Serviço cadastrado por ID.
             </summary>
@@ -80,7 +80,7 @@
             <response code="200">Retorna os dados da Ordem de Serviço quando encontrado.</response>
             <response code="404">Ordem de Serviço não encontrado.</response>
         </member>
-        <member name="M:ServiceOrderControllers.GetByServiceId(System.Nullable{System.Guid},System.Threading.CancellationToken)">
+        <member name="M:ServiceOrder.GetByServiceId(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
             Retorna o Ordem de Serviço cadastrado por ServiceId.
             </summary>
@@ -89,7 +89,7 @@
             <response code="200">Retorna os dados da Ordem de Serviço quando encontrado.</response>
             <response code="404">Ordem de Serviço não encontrado.</response>
         </member>
-        <member name="M:ServiceOrderControllers.GetBySupplierId(System.Nullable{System.Guid},System.Threading.CancellationToken)">
+        <member name="M:ServiceOrder.GetBySupplierId(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
             Retorna o Ordem de Serviço cadastrado por SupplierId.
             </summary>
@@ -98,7 +98,7 @@
             <response code="200">Retorna os dados da Ordem de Serviço quando encontrado.</response>
             <response code="404">Ordem de Serviço não encontrado.</response>
         </member>
-        <member name="M:ServiceOrderControllers.Create(CreateServiceOrderRequest)">
+        <member name="M:ServiceOrder.Create(CreateServiceOrderRequest)">
             <summary>
             Cria um novo Ordem de Serviço com base nos dados fornecidos.
             </summary>
@@ -106,7 +106,7 @@
             <response code="201">Ordem de Serviço criado com sucesso.</response>
             <response code="400">Requisição inválida ou erro ao criar o Ordem de Serviço.</response>
         </member>
-        <member name="M:ServiceOrderControllers.Update(System.Nullable{System.Guid},UpdateServiceOrderRequest,System.Threading.CancellationToken)">
+        <member name="M:ServiceOrder.Update(System.Nullable{System.Guid},UpdateServiceOrderRequest,System.Threading.CancellationToken)">
             <summary>
             Altera o Ordem de Serviço cadastrado pelo Id.
             </summary>
@@ -116,7 +116,7 @@
             <response code="404">Ordem de Serviço não encontrado.</response>
             <response code="200">Retorna que um Ordem de Serviço foi alterado.</response>
         </member>
-        <member name="M:ServiceOrderControllers.Delete(System.Nullable{System.Guid},System.Threading.CancellationToken)">
+        <member name="M:ServiceOrder.Delete(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
             Deleta o Ordem de Serviço cadastrado pelo Id.
             </summary>
@@ -124,14 +124,14 @@
             <param name="cancellationToken"></param>
             <response code="200">Retorna que um Ordem de Serviço foi deletado.</response>
         </member>
-        <member name="M:SupplierControllers.GetAll(System.Threading.CancellationToken)">
+        <member name="M:Supplier.GetAll(System.Threading.CancellationToken)">
             <summary>
             Retorna todos os Suppliers(Fornecedores) cadastrados.
             </summary>
             <param name="cancellationToken"></param>
             <response code="200">Coleção de Supplier(Fornecedor). Pode ser uma coleção vazia se não houver suppliers cadastrados.</response>
         </member>
-        <member name="M:SupplierControllers.Get(System.Nullable{System.Guid},System.Threading.CancellationToken)">
+        <member name="M:Supplier.Get(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
             Retorna o fornecedor cadastrado por ID.
             </summary>
@@ -140,7 +140,7 @@
             <response code="200">Retorna os dados do fornecedor quando encontrado.</response>
             <response code="404">Fornecedor não encontrado.</response>
         </member>
-        <member name="M:SupplierControllers.GetByEmail(System.String,System.Threading.CancellationToken)">
+        <member name="M:Supplier.GetByEmail(System.String,System.Threading.CancellationToken)">
             <summary>
             Retorna o fornecedor cadastrado por Email.
             </summary>
@@ -149,7 +149,7 @@
             <response code="200">Retorna os dados do fornecedor quando encontrado.</response>
             <response code="404">Fornecedor não encontrado.</response>
         </member>
-        <member name="M:SupplierControllers.GetByMachine(ESewingMachine,System.Threading.CancellationToken)">
+        <member name="M:Supplier.GetByMachine(ESewingMachine,System.Threading.CancellationToken)">
             <summary>
             Retorna o fornecedor cadastrado por maquina.
             </summary>
@@ -158,7 +158,7 @@
             <response code="200">Retorna os dados do fornecedor quando encontrado.</response>
             <response code="404">Fornecedor não encontrado.</response>
         </member>
-        <member name="M:SupplierControllers.GetByMaterial(System.String,System.Threading.CancellationToken)">
+        <member name="M:Supplier.GetByMaterial(System.String,System.Threading.CancellationToken)">
             <summary>
             Retorna o fornecedor cadastrado por material.
             </summary>
@@ -167,7 +167,7 @@
             <response code="200">Retorna os dados do fornecedor quando encontrado.</response>
             <response code="404">Fornecedor não encontrado.</response>
         </member>
-        <member name="M:SupplierControllers.Create(CreateSupplierRequest)">
+        <member name="M:Supplier.Create(CreateSupplierRequest)">
             <summary>
             Cria um novo fornecedor com base nos dados fornecidos.
             </summary>
@@ -175,7 +175,7 @@
             <response code="201">Fornecedor criado com sucesso.</response>
             <response code="400">Requisição inválida ou erro ao criar o fornecedor.</response>
         </member>
-        <member name="M:SupplierControllers.Update(System.Nullable{System.Guid},UpdateSupplierRequest,System.Threading.CancellationToken)">
+        <member name="M:Supplier.Update(System.Nullable{System.Guid},UpdateSupplierRequest,System.Threading.CancellationToken)">
             <summary>
             Altera o fornecedor cadastrado pelo Id.
             </summary>
@@ -185,7 +185,7 @@
             <response code="404">Fornecedor não encontrado.</response>
             <response code="200">Retorna que um fornecedor foi alterado.</response>
         </member>
-        <member name="M:SupplierControllers.Delete(System.Nullable{System.Guid},System.Threading.CancellationToken)">
+        <member name="M:Supplier.Delete(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
             Deleta o fornecedor cadastrado pelo Id.
             </summary>

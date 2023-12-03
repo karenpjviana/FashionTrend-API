@@ -4,8 +4,7 @@ public sealed class CreateDraftContractValidator : AbstractValidator<CreateDraft
 {
     public CreateDraftContractValidator()
     {
-        RuleFor(x => x.Supplier);
-        RuleFor(x => x.Service);
+        RuleFor(x => x.ServiceOrder.Id);
         RuleFor(x => x.Description);
     }
 }

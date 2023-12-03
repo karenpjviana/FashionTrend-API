@@ -26,8 +26,8 @@ public class CreateServiceOrderHandler : IRequestHandler<CreateServiceOrderReque
         try
         {
             var serviceOrder = _mapper.Map<ServiceOrder>(request);
-            var service = _mapper.Map<Service>(request.Service.Id);
-            var supplier = _mapper.Map<Supplier>(request.Supplier.Id);
+            var service = await _serviceRepository.Get(request.Service.Id, cancellationToken);
+            var supplier = await _supplierRepository.Get(request.Supplier.Id, cancellationToken);
 
             if (service == null)
                 throw new ArgumentException("Service não encontrado");
@@ -38,7 +38,10 @@ public class CreateServiceOrderHandler : IRequestHandler<CreateServiceOrderReque
             bool haveMaterial = service.Materials.All(m => supplier.Materials.Contains(m));
 
             if (!haveSewingMachine || !haveMaterial) 
-                serviceOrder.Status = ERequestStatus.Rejected; 
+                serviceOrder.Status = ERequestStatus.Rejected;
+
+            serviceOrder.Supplier = supplier;
+            serviceOrder.Service = service;
 
             _serviceOrderRepository.Create(serviceOrder);
 
