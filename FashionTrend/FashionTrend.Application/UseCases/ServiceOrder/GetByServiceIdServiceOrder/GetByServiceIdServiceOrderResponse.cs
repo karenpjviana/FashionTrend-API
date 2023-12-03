@@ -1,4 +1,4 @@
-﻿public sealed record CreateServiceOrderResponse
+﻿public sealed record GetByServiceIdServiceOrderResponse
 {
     public Guid Id { get; set; }
     public Supplier Supplier { get; set; }

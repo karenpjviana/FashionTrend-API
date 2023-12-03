@@ -1,6 +1,6 @@
 ﻿public enum ERequestStatus
 {
-    Pending,
+    Pending = 1,
     Approved,
     Rejected,
     Completed

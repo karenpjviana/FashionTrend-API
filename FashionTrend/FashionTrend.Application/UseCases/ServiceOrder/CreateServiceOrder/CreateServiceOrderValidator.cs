@@ -4,7 +4,8 @@ public sealed class CreateServiceOrderValidator : AbstractValidator<CreateServic
 {
     public CreateServiceOrderValidator()
     {
-        RuleFor(x => x.ServiceId).NotEmpty();
-        RuleFor(x => x.SupplierId).NotEmpty();
+        RuleFor(x => x.Supplier.Id).NotEmpty();
+        RuleFor(x => x.Service.Id).NotEmpty();
+        RuleFor(x => x.EstimetedDate).NotEmpty();
     }
 }

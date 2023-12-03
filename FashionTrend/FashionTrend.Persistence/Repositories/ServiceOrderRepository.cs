@@ -9,7 +9,7 @@ public class ServiceOrderRepository : BaseRepository<ServiceOrder>, IServiceOrde
 
     public async Task<ServiceOrder> GetByServiceId(Guid idService, CancellationToken cancellationToken)
     {
-        return await Context.ServiceOrders.Where(x => x.ServiceId.Equals(idService)).FirstOrDefaultAsync(cancellationToken);
+        return await Context.ServiceOrders.Where(x => x.Service.Id.Equals(idService)).FirstOrDefaultAsync(cancellationToken);
     }
 
     public async Task<ServiceOrder> GetByStatus(ERequestStatus status, CancellationToken cancellationToken)
@@ -19,6 +19,6 @@ public class ServiceOrderRepository : BaseRepository<ServiceOrder>, IServiceOrde
 
     public async Task<ServiceOrder> GetBySupplierId(Guid idSupplier, CancellationToken cancellationToken)
     {
-        return await Context.ServiceOrders.Where(x => x.SupplierId.Equals(idSupplier)).FirstOrDefaultAsync(cancellationToken);
+        return await Context.ServiceOrders.Where(x => x.Supplier.Id.Equals(idSupplier)).FirstOrDefaultAsync(cancellationToken);
     }
 }
