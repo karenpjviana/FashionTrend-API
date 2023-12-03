@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
 
-// Nome da Rota
 [Route("api/[controller]")]
 [ApiController]
 public class DraftController : ControllerBase
