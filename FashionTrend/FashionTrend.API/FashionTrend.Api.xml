@@ -4,6 +4,32 @@
         <name>FashionTrend.API</name>
     </assembly>
     <members>
+        <member name="M:DraftContract.Create(CreateDraftContractRequest)">
+            <summary>
+            Cria um novo Contrato com base nos dados fornecidos.
+            </summary>
+            <param name="request">Dados da Ordem de Serviço a ser criada.</param>
+            <response code="201">Ordem de Serviço criada com sucesso.</response>
+            <response code="400">Requisição inválida ou erro ao criar a Ordem de Serviço.</response>
+        </member>
+        <member name="M:DraftContract.Update(System.Guid,AcceptedDraftContractRequest,System.Threading.CancellationToken)">
+            <summary>
+            Altera o Contrato cadastrado pelo Id.
+            </summary>
+            <param name="id">Id do Contrato</param>
+            <param name="request">Dados da Contrato a ser alterada.</param>
+            <param name="cancellationToken"></param>
+            <response code="404">Contrato não encontrada.</response>
+            <response code="200">Retorna que um Contrato foi alterada.</response>
+        </member>
+        <member name="M:Message.Create(CreateMessageRequest)">
+            <summary>
+            Cria uma nova mensagem.
+            </summary>
+            <param name="request">Dados da mensagem a ser criada.</param>
+            <response code="201">Mensagem criada com sucesso.</response>
+            <response code="400">Requisição inválida ou erro ao criar a Mensagem.</response>
+        </member>
         <member name="M:Service.GetAll(System.Threading.CancellationToken)">
             <summary>
             Retorna todos os Services(Serviços) cadastrados.
@@ -42,7 +68,7 @@
             <summary>
             Cria um novo Serviço com base nos dados fornecidos.
             </summary>
-            <param name="request">Dados do Serviço a serem criados.</param>
+            <param name="request">Dados do Serviço a ser criado.</param>
             <response code="201">Serviço criado com sucesso.</response>
             <response code="400">Requisição inválida ou erro ao criar o Serviço.</response>
         </member>
@@ -51,7 +77,7 @@
             Altera o Serviço cadastrado pelo Id.
             </summary>
             <param name="id">Id do Serviço</param>
-            <param name="request">Dados do Serviço a serem alterados.</param>
+            <param name="request">Dados do Serviço a ser alterado.</param>
             <param name="cancellationToken"></param>
             <response code="404">Serviço não encontrado.</response>
             <response code="200">Retorna que um Serviço foi alterado.</response>
@@ -66,63 +92,63 @@
         </member>
         <member name="M:ServiceOrder.GetAll(System.Threading.CancellationToken)">
             <summary>
-            Retorna todos os ServiceOrders(Ordens de Serviço) cadastrados.
+            Retorna todos as ServiceOrders(Ordens de Serviço) cadastradas.
             </summary>
             <param name="cancellationToken"></param>
             <response code="200">Coleção de ServiceOrder(Ordem de Serviço). Pode ser uma coleção vazia se não houver ServiceOrders cadastrados.</response>
         </member>
         <member name="M:ServiceOrder.Get(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
-            Retorna o Ordem de Serviço cadastrado por ID.
+            Retorna a Ordem de Serviço cadastrada por ID.
             </summary>
             <param name="id">ID da Ordem de Serviço</param>
             <param name="cancellationToken"></param>
-            <response code="200">Retorna os dados da Ordem de Serviço quando encontrado.</response>
-            <response code="404">Ordem de Serviço não encontrado.</response>
+            <response code="200">Retorna os dados da Ordem de Serviço quando encontrada.</response>
+            <response code="404">Ordem de Serviço não encontrada.</response>
         </member>
         <member name="M:ServiceOrder.GetByServiceId(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
-            Retorna o Ordem de Serviço cadastrado por ServiceId.
+            Retorna a Ordem de Serviço cadastrada por ServiceId.
             </summary>
-            <param name="id">ID do Serviço</param>
+            <param name="id">ID da Ordem de Serviço</param>
             <param name="cancellationToken"></param>
-            <response code="200">Retorna os dados da Ordem de Serviço quando encontrado.</response>
-            <response code="404">Ordem de Serviço não encontrado.</response>
+            <response code="200">Retorna os dados da Ordem de Serviço quando encontrada.</response>
+            <response code="404">Ordem de Serviço não encontrada.</response>
         </member>
         <member name="M:ServiceOrder.GetBySupplierId(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
-            Retorna o Ordem de Serviço cadastrado por SupplierId.
+            Retorna a Ordem de Serviço cadastrada por SupplierId.
             </summary>
             <param name="id">ID do Supplier(Fornecedor)</param>
             <param name="cancellationToken"></param>
-            <response code="200">Retorna os dados da Ordem de Serviço quando encontrado.</response>
-            <response code="404">Ordem de Serviço não encontrado.</response>
+            <response code="200">Retorna os dados da Ordem de Serviço quando encontrada.</response>
+            <response code="404">Ordem de Serviço não encontrada.</response>
         </member>
         <member name="M:ServiceOrder.Create(CreateServiceOrderRequest)">
             <summary>
-            Cria um novo Ordem de Serviço com base nos dados fornecidos.
+            Cria uma nova Ordem de Serviço com base nos dados fornecidos.
             </summary>
-            <param name="request">Dados do Ordem de Serviço a serem criados.</param>
-            <response code="201">Ordem de Serviço criado com sucesso.</response>
-            <response code="400">Requisição inválida ou erro ao criar o Ordem de Serviço.</response>
+            <param name="request">Dados da Ordem de Serviço a ser criada.</param>
+            <response code="201">Ordem de Serviço criada com sucesso.</response>
+            <response code="400">Requisição inválida ou erro ao criar a Ordem de Serviço.</response>
         </member>
         <member name="M:ServiceOrder.Update(System.Nullable{System.Guid},UpdateServiceOrderRequest,System.Threading.CancellationToken)">
             <summary>
-            Altera o Ordem de Serviço cadastrado pelo Id.
+            Altera a Ordem de Serviço cadastrado pelo Id.
             </summary>
-            <param name="id">Id do Ordem de Serviço</param>
-            <param name="request">Dados do Ordem de Serviço a serem alterados.</param>
+            <param name="id">Id da Ordem de Serviço</param>
+            <param name="request">Dados da Ordem de Serviço a ser alterada.</param>
             <param name="cancellationToken"></param>
-            <response code="404">Ordem de Serviço não encontrado.</response>
-            <response code="200">Retorna que um Ordem de Serviço foi alterado.</response>
+            <response code="404">Ordem de Serviço não encontrada.</response>
+            <response code="200">Retorna que uma Ordem de Serviço foi alterada.</response>
         </member>
         <member name="M:ServiceOrder.Delete(System.Nullable{System.Guid},System.Threading.CancellationToken)">
             <summary>
-            Deleta o Ordem de Serviço cadastrado pelo Id.
+            Deleta a Ordem de Serviço cadastrada pelo Id.
             </summary>
-            <param name="id">Id do Ordem de Serviço</param>
+            <param name="id">Id da Ordem de Serviço</param>
             <param name="cancellationToken"></param>
-            <response code="200">Retorna que um Ordem de Serviço foi deletado.</response>
+            <response code="200">Retorna que uma Ordem de Serviço foi deletada.</response>
         </member>
         <member name="M:Supplier.GetAll(System.Threading.CancellationToken)">
             <summary>

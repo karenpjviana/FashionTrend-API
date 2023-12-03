@@ -1,9 +1,16 @@
 ﻿using Confluent.Kafka;
+using Microsoft.Extensions.Logging;
 using System.Text.Json;
 
 public class KafkaProducer : IKafkaProducer
 {
     private readonly IProducer<string, string> _producer;
+    private readonly ILogger<KafkaProducer> _logger;
+
+    public KafkaProducer(ILogger<KafkaProducer> logger)
+    {
+        _logger = logger;
+    }
 
     public KafkaProducer()
     {
@@ -57,7 +64,6 @@ public class KafkaProducer : IKafkaProducer
             Status = "em processamento"
 
         };
-        // Serializa a mensagem e envia para o Kafka
         string serializedMessage = JsonSerializer.Serialize(message);
 
 
@@ -68,9 +74,8 @@ public class KafkaProducer : IKafkaProducer
         {
             try
             {
-                var deliveryReport = await _producer.ProduceAsync(topic, new Message<string, string> { Value = serializedMessage }); // Se você precisar de confirmação de entrega, pode verificar deliveryReport.Status.
+                var deliveryReport = await _producer.ProduceAsync(topic, new Message<string, string> { Value = serializedMessage });
 
-                // Se chegou até aqui, a mensagem foi enviada com sucesso.
                 message.Status = "com sucesso";
 
             }
@@ -80,20 +85,14 @@ public class KafkaProducer : IKafkaProducer
 
                 if (attempt < maxRetries)
                 {
-                    Console.WriteLine($"Tentando novamente em {retryIntervalMs / 1000} segundos...");
+                    _logger.LogTrace($"Tentando novamente em {retryIntervalMs / 1000} segundos...");
                     System.Threading.Thread.Sleep(retryIntervalMs);
                     message.Status = "retry";
-                    // Lidar com erros
-
                 }
                 else
                 {
-                    // Se todas as tentativas falharam, propague a exceção para o chamador.
-                    throw new ArgumentException("Retry 3 vezes");
+                    _logger.LogError(ex, "Ocorreu um erro no método ProduceAsyncWithRetry do KafkaProducer.");
                     throw;
-                    message.Status = "com erro";
-                    // Lidar com erros
-
                 }
             }
 
